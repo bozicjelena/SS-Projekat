@@ -260,12 +260,6 @@ void Asembler::processAsmLines(){
         return;
       }
     }
-    /*else if(regex_match(line,s,ins_st_reg_dir)){
-      if(processSt_reg_dir(s.str(1), s.str(3)) < 0){
-        cout << "Error!";
-        return;
-      }
-    }*/
     else if(regex_match(line,s,ins_st_reg_ind)){
       if(processSt_reg_ind(s.str(1), s.str(3)) < 0){
         cout << "Error!";
@@ -1699,12 +1693,6 @@ int Asembler::processSt_mem_dir_s(string gpr, string op){
   lc += 4;
   return 0;
 }
-
-/*
-int Asembler::processSt_reg_dir(string gpr, string op){
-  kako popuniti opcode???????????????????????????????
-}
-*/
 
 int Asembler::processSt_reg_ind(string gpr, string op){
   if(currSectionName == "UND"){

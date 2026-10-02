@@ -109,7 +109,6 @@ class Asembler{
   regex ins_ld_reg_ind_pom_s = regex("^ld \\[%(r([0-9]|1[0-5])|sp|pc) \\+ ([a-zA-Z][a-zA-Z0-9_]*)\\], %(r([0-9]|1[0-5])|sp|pc)$");
   regex ins_st_mem_dir_l = regex("^st %(r([0-9]|1[0-5])|sp|pc), ([0-9]+|0x[0-9A-Fa-f]+)$");
   regex ins_st_mem_dir_s = regex("^st %(r([0-9]|1[0-5])|sp|pc), ([a-zA-Z][a-zA-Z0-9_]*)$");
-  //regex ins_st_reg_dir = regex("^st %(r([0-9]|1[0-5])|sp|pc), %(r([0-9]|1[0-5])|sp|pc)$");
   regex ins_st_reg_ind = regex("^st %(r([0-9]|1[0-5])|sp|pc), \\[%(r([0-9]|1[0-5])|sp|pc)\\]$");
   regex ins_st_reg_ind_pom_l = regex("^st %(r([0-9]|1[0-5])|sp|pc), \\[%(r([0-9]|1[0-5])|sp|pc) \\+ ([0-9]+|0x[0-9A-Fa-f]+)\\]$");
   regex ins_st_reg_ind_pom_s = regex("^st %(r([0-9]|1[0-5])|sp|pc), \\[%(r([0-9]|1[0-5])|sp|pc) \\+ ([a-zA-Z][a-zA-Z0-9_]*)\\]$");
@@ -159,7 +158,6 @@ class Asembler{
   int processLd_reg_ind_pom_s(string op, string pom, string gpr);
   int processSt_mem_dir_l(string gpr, string op); //st gpr, op op <= gpr
   int processSt_mem_dir_s(string gpr, string op);
-  //int processSt_reg_dir(string gpr, string op);
   int processSt_reg_ind(string gpr, string op);
   int processSt_reg_ind_pom_l(string gpr, string op, string pom);
   int processSt_reg_ind_pom_s(string gpr, string op, string pom);

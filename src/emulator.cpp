@@ -330,15 +330,3 @@ void Emulator::write(unsigned int address, int data){
     memory[address + i] = (data >> (8 * i)) & 0xFF;
   }
 }
-
-// g++ -g -o asembler ./src/asembler.cpp
-// ./asembler -o handler.o ./tests/handler.s
-// ./asembler -o math.o ./tests/math.s
-// ./asembler -o isr_timer.o ./tests/isr_timer.s
-// ./asembler -o isr_terminal.o ./tests/isr_terminal.s
-// ./asembler -o isr_software.o ./tests/isr_software.s
-// ./asembler -o main.o ./tests/main.s
-// g++ -g -o linker ./src/linker.cpp
-// ./linker -hex -place=my_code@0x40000000 -place=math@0xf0000000 -o program.hex handler.o main.o math.o isr_terminal.o isr_timer.o isr_software.o
-// g++ -g -o emulator ./src/emulator.cpp
-//./emulator program.hex
